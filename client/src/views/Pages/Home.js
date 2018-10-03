@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Nav from '../../container/Nav'
+import Nav from './/Nav'
 import Header from './Header'
-import Footer from '../../container/Footer'
+import Footer from './Footer'
 class Home extends Component {
 
   render() {

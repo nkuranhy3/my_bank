@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import RequestLoan from '../views/Pages/RequestLoan'
-import Lender from '../views/Pages/Lender'
+import RequestLoan from './RequestLoan'
+import Lender from './Lender'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
   
  class MyNav extends Component {
@@ -21,7 +21,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <NavbarBrand href="/">My Bank</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
