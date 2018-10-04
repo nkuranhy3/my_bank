@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Col, Row } from 'reactstrap';
+import {Col, Row } from 'reactstrap';
 import Nav from './Nav'
 import Header from './Header'
 import Footer from './Footer'
+import Signin from './Signin'
+
+
 class Home extends Component {
 
   render() {
@@ -11,12 +14,11 @@ class Home extends Component {
           <Nav />
           <Header />
             <div>
-            <h1 className="text-center">Tell us what you want to do..</h1>
+            <h1 className="text-center">Signin to enjoy our Services</h1>
            
             <Row className="align-items-center">
               <Col col="12" className="mb-4 mb-xl-0 text-center mt-3">
-                <Button  color="primary" size="lg">Request A Loan</Button>
-                <Button style={{marginLeft: 14 }} outline color="info" size="lg">Invets Money</Button>
+                <Signin />
               </Col>
               </Row>
             </div>
