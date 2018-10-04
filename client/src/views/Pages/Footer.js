@@ -7,7 +7,7 @@ class FooterPage extends Component {
             <Footer color="stylish-color-dark" className="page-footer fixed-bottom font-small pt-0">
                 <div className="footer-copyright text-center py-3">
                     <Container fluid>
-                        &copy; {(new Date().getFullYear())} Copyright:<a href="/"> MyBank </a>
+                        &copy; {(new Date().getFullYear())} Copyright:<a href="/"> Big Daddy Supremo Bank </a>
                     </Container>
                 </div>
             </Footer>

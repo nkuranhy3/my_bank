@@ -10,8 +10,8 @@ class Header extends Component {
           <Col>
             <Jumbotron fluid>
               <Container fluid >
-                <h1 className="display-3 text-center">Fluid jumbotron</h1>
-                <p className="lead text-center">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                <h1 className="display-3 text-center">Big Daddy Supremo Bank</h1>
+                <p className="lead text-center">We are here for your business. You can <strong>invest</strong> into smaller businesses or you can <strong>Request a Loan.</strong></p>
               </Container>
             </Jumbotron>
           </Col>

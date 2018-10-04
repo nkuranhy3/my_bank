@@ -21,7 +21,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">My Bank</NavbarBrand>
+            <NavbarBrand href="/">Big Daddy Supremo Bank</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
