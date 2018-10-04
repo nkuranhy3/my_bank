@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import RequestLoan from './RequestLoan'
+import React, { Component } from 'react'
 import Lender from './Lender'
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
   
  class MyNav extends Component {
     constructor(props) {
@@ -25,19 +24,12 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-              <NavItem>
-                  <RequestLoan/>                 
+              <NavItem>              
               </NavItem>
               <NavItem>
                   <Lender/>                 
               </NavItem>
-                <NavItem>
-                  <NavLink href="/">Components</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="">GitHub</NavLink>
-                </NavItem>
-              </Nav>
+           </Nav>
             </Collapse>
           </Navbar>
         </div>

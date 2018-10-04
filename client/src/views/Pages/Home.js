@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Header from './Header'
 import Footer from './Footer'
 import Signin from './Signin'
+import RequestLoan from './RequestLoan'
 
 
 class Home extends Component {
@@ -14,10 +15,11 @@ class Home extends Component {
           <Nav />
           <Header />
             <div>
-            <h1 className="text-center">Signin to enjoy our Services</h1>
-           
             <Row className="align-items-center">
               <Col col="12" className="mb-4 mb-xl-0 text-center mt-3">
+
+                <RequestLoan/>
+
                 <Signin />
               </Col>
               </Row>

@@ -35,10 +35,10 @@ class RequestLoan extends Component {
 
   render() {
     return (
-      <div className="animated fadeIn">
+      <div className="container animated fadeIn">
         <Row>
           <Col>
-            <Button color="" onClick={this.togglePrimary} className="mr-1">Request Loan</Button>
+            <Button style={{marginBottom:30}} outline color="primary" size="lg" block onClick={this.togglePrimary} className="mr-1">Request Loan</Button>
             <Modal isOpen={this.state.primary} toggle={this.togglePrimary}
                     className={'modal-primary ' + this.props.className}>
                 <ModalHeader toggle={this.togglePrimary}>Request Loan</ModalHeader>
