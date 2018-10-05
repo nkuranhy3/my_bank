@@ -12,7 +12,11 @@ class BorrowersList extends Component {
         }else{
             return data.allBorrowers.map(borrowers=>{
                 return(
-                    <div key={borrowers.id} >{borrowers.name} - {borrowers.colaterel}- {borrowers.credit}-{borrowers.paymentDate} {borrowers.picture}  </div>
+                    <div className="container">
+                        <div key={borrowers.id} >
+                            <li class="list-group-item">{borrowers.name} has borrowed {borrowers.credit}, email is {borrowers.varificationEmail} and will pay by {borrowers.paymentDate}. He has this collateral: {borrowers.colaterel}</li>
+                        </div>
+                 </div>
                 )
             })
         }
@@ -21,10 +25,9 @@ class BorrowersList extends Component {
   render() {
       console.log(this.props);
     return (
-        <div className="display" >
-          BorrowersList page
+    <ol class="list-group list-group-flush">
           {this.displayBorrowers()}
-        </div>
+        </ol>
     );
   }
 }
