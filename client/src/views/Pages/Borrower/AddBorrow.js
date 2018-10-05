@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
-import {addNewBorrower } from '../../Queries'
+import {addNewBorrower, getAllLenders,getAllBorrowers } from '../../Queries'
 import {graphql, compose } from 'react-apollo'
 
 
 class AddBorrower extends Component {
+    displayLenders(){
+        var data= this.props.getAllLenders
+        if(data.loading){
+            return(<option disabled>Loading data....</option>)
+        }else{
+            return data.allLenders.map(lender=>{
+                return<option key={lender.id} value={lender.id}>{lender.name} Has deposited {lender.deposit}</option>
+            })
+        }
+    }
     constructor(){
         super();
         this.state ={
             name:"",
             colaterel:"",
             credit:"",
-            paymentDate:""
+            paymentDate:"",
+            lenderNameId:""
         }
     }
    submitForm(e){
@@ -24,8 +35,12 @@ class AddBorrower extends Component {
                 paymentDate:this.state.paymentDate,
                 varificationEmail:this.state.varificationEmail,
                 lenderNameId:this.state.lenderNameId,
-                picture:this.state.picture
-            }
+                picture:this.state.picture,
+
+            },
+            refetchQueries:[
+                {query: getAllBorrowers}
+            ]
         })
    }
   render() {
@@ -44,27 +59,29 @@ class AddBorrower extends Component {
             </div>
             <div  className="form-group">
                 <label>credit Number</label>
-                <input type="number" className="form-control"  onChange={(e) =>this.setState({credit: e.target.value})}/>
+                <input type="text" className="form-control"  onChange={(e) =>this.setState({credit: e.target.value})}/>
             </div>
             <div  className="form-group">
                 <label>paymentDate</label>
-                <input type="number" className="form-control"  onChange={(e) =>this.setState({paymentDate: e.target.value})}/>
+                <input type="date" className="form-control"  onChange={(e) =>this.setState({paymentDate: e.target.value})}/>
             </div>
 
             <div  className="form-group">
                 <label>varificationEmail</label>
-                <input type="number" className="form-control"  onChange={(e) =>this.setState({varificationEmail: e.target.value})}/>
+                <input type="text" className="form-control"  onChange={(e) =>this.setState({varificationEmail: e.target.value})}/>
             </div>
-
-            <div  className="form-group">
-                <label>lenderNameId</label>
-                <input type="number" className="form-control"  onChange={(e) =>this.setState({lenderNameId: e.target.value})}/>
-            </div>
-
-            <div  className="form-group">
+            <div className="form-group">
                 <label>picture</label>
-                <input type="number" className="form-control"  onChange={(e) =>this.setState({picture: e.target.value})}/>
+                <input type="text" className="form-control"  onChange={(e) =>this.setState({picture: e.target.value})}/>
             </div>
+            <div  className="form-group">
+                <label>Lender</label>
+                <select onChange={(e)=>this.setState({lenderNameId: e.target.value})}>
+                    <option>Select Lender</option>
+                    {this.displayLenders()}
+                </select>
+            </div>
+            
             <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
        </form>
         </div>
@@ -73,4 +90,5 @@ class AddBorrower extends Component {
 }
 
 export default compose(
+    graphql(getAllLenders,{ name: "getAllLenders"}),
     graphql(addNewBorrower, {name:'addNewBorrower'}))(AddBorrower);

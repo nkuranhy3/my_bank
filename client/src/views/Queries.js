@@ -43,6 +43,7 @@ const getAllBorrowers = gql`{
     picture
     varificationEmail
     lenderName{
+      id
       name
     }
   }

@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Header from './Header'
 import Signin from './Signin'
 import './Home.css'
+import BorrowersPage from './Borrower/BorrowersPage'
 
 class Home extends Component {
   render() {
@@ -18,7 +19,7 @@ class Home extends Component {
                 <div>
                 <Row className="align-items-center">
                   <Col col="12" className="mb-4 mb-xl-0 text-center mt-3">
-                    
+                  <BorrowersPage />
                     <Signin />
                   </Col>
                 </Row>
