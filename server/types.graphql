@@ -1,0 +1,20 @@
+type Lender @model {
+	id: ID! @isUnique
+	name: String!
+	varificationEmail: String!
+	createdAt: DateTime! 
+	deposit: String!
+	borrowers: [Borrower!]! @relation(name: "LenderName")
+}
+
+type Borrower @model {
+	id: ID! @isUnique
+	name: String!
+	varificationEmail: String!
+	picture: String
+	colaterel: String
+	createdAt: DateTime! 
+	credit: String!
+	paymentDate: String!
+	lenderName: Lender! @relation(name: "LenderName")
+}
