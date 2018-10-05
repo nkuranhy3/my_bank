@@ -71,7 +71,7 @@ render(){
                 )  :  (
                     <Row>
                         <Col>
-                            <Button color="primary" size="lg" block onClick={this.togglePrimary} className="mr-1">SIGNIN LENDER</Button>
+                            <Button color="primary" size="lg" block onClick={this.togglePrimary} className="mr-1">SIGNIN TO GET STARTED </Button>
                             <Modal isOpen={this.state.primary} toggle={this.togglePrimary}
                                     className={'modal-primary ' + this.props.className}>
                                 <ModalHeader toggle={this.togglePrimary}>Signin To Deposit Money For Lending</ModalHeader>
