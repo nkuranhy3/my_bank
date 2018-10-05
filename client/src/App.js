@@ -8,7 +8,7 @@ import 'simple-line-icons/css/simple-line-icons.css';
 import './scss/style.css'
 
 
-import { Login, Register, Home, LenderDisplay, LoansDisplay } from './views/Pages';
+import { Login, Register, Home, LenderDisplay, LoansDisplay, LendersPage, BorrowersPage } from './views/Pages';
 
 class App extends Component {
   render() {
@@ -20,6 +20,9 @@ class App extends Component {
           <Route exact path="/register" name="Register Page" component={Register} />
           <Route exact path="/lender_details" name="Lender Display Page" component={LenderDisplay} />
           <Route exact path="/loans_details" name="Loans Display Page" component={LoansDisplay} />
+          <Route exact path="/lend_money" name="Loans Display Page" component={LendersPage} />
+          <Route exact path="/borrow_money" name="Loans Display Page" component={BorrowersPage} />
+
         </Switch>
       </HashRouter>
     );

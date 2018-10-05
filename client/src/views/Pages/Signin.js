@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
-import Lender from './Lender'
 import { Col, Modal, ModalBody, ModalHeader, Row, Button,Card, CardBody} from 'reactstrap';
 
 
@@ -66,7 +65,7 @@ render(){
                 <span>
                     <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
                     <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
-                    <Lender />
+                    {/* put two buttons here where the user can chode to borrow or lend */}
                 </span>
                 )  :  (
                     <Row>
