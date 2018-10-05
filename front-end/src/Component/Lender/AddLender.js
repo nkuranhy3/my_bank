@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import {addNewLender, getAllLenders } from '../Queries'
 import {graphql, compose } from 'react-apollo'
+import { Col, Row, Button,Card, CardBody, CardFooter, CardHeader, Form, FormGroup, FormText, Input, Label} from 'reactstrap';
+
 
 
 class AddLender extends Component {
+    
     constructor(){
         super();
         this.state ={
@@ -12,6 +15,8 @@ class AddLender extends Component {
             varificationEmail:""
         }
     }
+    
+
    submitForm(e){
          e.preventDefault();
         // console.log(this.state);
@@ -24,30 +29,60 @@ class AddLender extends Component {
             refetchQueries:[
                 {query: getAllLenders}
             ]
-        })
-   }
+        }
+    )}
+
   render() {
      
     return (
-        <div className="" >
-        <h1 className="display-2 text-center">Add A Lender </h1>
-        <form className="form" id="" onSubmit={this.submitForm.bind(this)} >
-            <div className="form-group">
-                <label>Lender Name</label>
-                <input type="text" className="form-control" placeholder="Your name "  onChange={(e) =>this.setState({name: e.target.value})} />
-            </div>
-            <div  className="form-group">
-                <label>deposit</label>
-                <input type="text" className="form-control" placeholder="Deposit Amount"  onChange={(e) =>this.setState({deposit: e.target.value})}/>
-            </div>
-            <div  className="form-group">
-                <label>varification Email Number</label>
-                <input type="email" className="form-control" placeholder="email" onChange={(e) =>this.setState({varificationEmail: e.target.value})}/>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-       </form>
-        </div>
-    );
+        <div className="container">
+        <Row>
+          <Col>
+                    <Card>
+                    <CardHeader>
+                        <strong>Be Careful when Lending </strong> Money
+                    </CardHeader>
+                    <CardBody>
+                        <Form id="" onSubmit={this.submitForm.bind(this)} className="form-horizontal">
+                        <FormGroup row>
+                            <Col md="3">
+                            <Label htmlFor="hf-lender">Lender Name</Label>
+                            </Col>
+                            <Col xs="12" md="9">
+                            <Input type="text" id="hf-lender" name="hf-lender" placeholder="Enter lender Name" autoComplete="lender" onChange={(e) =>this.setState({name: e.target.value})}  />
+                            <FormText className="help-block">Please Lender Name</FormText>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Col md="3">
+                            <Label htmlFor="hf-date">Deposit Amount</Label>
+                            </Col>
+                            <Col xs="12" md="9">
+                            <Input type="text" id="hf-deposit" placeholder="Enter The Amount You want to Deposit" autoComplete="current-date"  onChange={(e) =>this.setState({deposit: e.target.value})}/>
+                            <FormText className="help-block">Deposit Amount</FormText>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Col md="3">
+                            <Label htmlFor="hf-date">Varification Email </Label>
+                            </Col>
+                            <Col xs="12" md="9">
+                            <Input type="email" id="hf-deposit" placeholder="Enter Varification Email" autoComplete="current-date"  onChange={(e) =>this.setState({varificationEmail: e.target.value})}/>
+                            <FormText className="help-block">Email</FormText>
+                            </Col>
+                        </FormGroup>
+                        <CardFooter>
+                            <Button onClick={this.togglePrimary} type="submit" size="lg" color="danger"><i className="fa fa-dot-circle-o"></i> Post Money For Lending </Button>
+                        </CardFooter>
+                        </Form>
+                    </CardBody>
+                    </Card>
+          </Col>
+                
+        </Row>
+        
+      </div>
+     );
   }
 }
 
