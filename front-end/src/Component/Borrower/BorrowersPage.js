@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import BorrowersList from './BorrowersList'
-import AddBorrower from './AddBorrow'
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
@@ -16,8 +15,7 @@ class BorrowerPage extends Component {
     return (
         <ApolloProvider client={client}>
           <div >
-            <h1 className="text-center display-3">Borrower List Page</h1>
-              <AddBorrower />
+            <h1 className="text-center display-3">Borrower  Page</h1>
               <BorrowersList />
           </div>
         </ApolloProvider>

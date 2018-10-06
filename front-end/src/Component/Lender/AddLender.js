@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {addNewLender, getAllLenders } from '../Queries'
 import {graphql, compose } from 'react-apollo'
-import { Col, Row, Button,Card, CardBody, CardFooter, CardHeader, Form, FormGroup, FormText, Input, Label} from 'reactstrap';
+import { Col, Button,Card, CardBody, CardFooter, CardHeader, Form, FormGroup, FormText, Input, Label} from 'reactstrap';
 
 
 
@@ -36,11 +36,10 @@ class AddLender extends Component {
      
     return (
         <div className="container">
-        <Row>
-          <Col>
+          
                     <Card>
                     <CardHeader>
-                        <strong>Be Careful when Lending </strong> Money
+                        <strong className="display-4" > Lend Money</strong> 
                     </CardHeader>
                     <CardBody>
                         <Form id="" onSubmit={this.submitForm.bind(this)} className="form-horizontal">
@@ -77,9 +76,7 @@ class AddLender extends Component {
                         </Form>
                     </CardBody>
                     </Card>
-          </Col>
-                
-        </Row>
+       
         
       </div>
      );

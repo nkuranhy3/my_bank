@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { getAllBorrowers } from '../Queries'
 import {graphql } from 'react-apollo'
-
+import { Card, CardBody, CardHeader, Col, ListGroup, ListGroupItem, Row} from 'reactstrap';
+import AddBorrower from './AddBorrow'
 
 
 class BorrowersList extends Component {
@@ -12,11 +13,7 @@ class BorrowersList extends Component {
         }else{
             return data.allBorrowers.map(borrowers=>{
                 return(
-                    <div className="container">
-                        <div key={borrowers.id} >
-                            <li class="list-group-item">{borrowers.name} has borrowed {borrowers.credit}, email is {borrowers.varificationEmail} and will pay by {borrowers.paymentDate}. He has this collateral: {borrowers.colaterel}</li>
-                        </div>
-                 </div>
+                <ListGroupItem  key={borrowers.id} tag="button" action>{borrowers.name} has borrowed {borrowers.credit}, email is {borrowers.varificationEmail} and will pay by {borrowers.paymentDate}. He has this collateral: {borrowers.colaterel}</ListGroupItem>
                 )
             })
         }
@@ -25,9 +22,26 @@ class BorrowersList extends Component {
   render() {
       console.log(this.props);
     return (
-    <ol class="list-group list-group-flush">
-          {this.displayBorrowers()}
-        </ol>
+
+      <div className="animated fadeIn">
+      <Row>
+        <Col sm="12" xl="6">
+          <Card>
+            <CardHeader>
+              <CardBody>
+                <ListGroup>
+              <strong className="display-4">Borrowers List </strong>
+                      {this.displayBorrowers()}
+              </ListGroup>
+              </CardBody>
+            </CardHeader>
+        </Card>
+        </Col>
+        <Col sm="12" xl="6" >
+            <AddBorrower />
+        </Col>
+        </Row>
+        </div>
     );
   }
 }
