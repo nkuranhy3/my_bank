@@ -3,7 +3,7 @@ import { getAllLenders } from '../Queries'
 import {graphql } from 'react-apollo'
 import { Card, CardBody, CardHeader, Col, ListGroup, ListGroupItem, Row} from 'reactstrap';
 import AddLender from './AddLender'
-
+import Footer from '../Footer'
 
 class LenderList extends Component {
     displayLenders(){
@@ -40,6 +40,7 @@ class LenderList extends Component {
         <AddLender/>
         </Col>
         </Row>
+        <Footer />
         </div>
     );
   }

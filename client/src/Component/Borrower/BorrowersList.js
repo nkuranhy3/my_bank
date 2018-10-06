@@ -3,7 +3,7 @@ import { getAllBorrowers } from '../Queries'
 import {graphql } from 'react-apollo'
 import { Card, CardBody, CardHeader, Col, ListGroup, ListGroupItem, Row} from 'reactstrap';
 import AddBorrower from './AddBorrow'
-
+import Footer from '../Footer'
 
 class BorrowersList extends Component {
     displayBorrowers(){
@@ -41,6 +41,7 @@ class BorrowersList extends Component {
             <AddBorrower />
         </Col>
         </Row>
+        <Footer />
         </div>
     );
   }
