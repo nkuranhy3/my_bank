@@ -3,6 +3,8 @@ import firebase from 'firebase'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import { Col, Modal, ModalBody, ModalHeader, Row, Button,Card, CardBody,  Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
 import Header from './Header'
+import Admin from './AdminView'
+
 
 firebase.initializeApp({
     apiKey: "AIzaSyAaXziK7mx1COo0V7Pq6qaGO8CEz_QhZzc",
@@ -11,11 +13,14 @@ firebase.initializeApp({
 
 class Firebase extends Component {
     state={
+        isAdmin:false,
         isSignedIn: false,
         modal: false,
         primary: false,
         isOpen: false
     }
+
+    
     uiConfig = {
         signInFlow: "redirect",
         signInOptions: [
@@ -27,13 +32,16 @@ class Firebase extends Component {
         }
       }
 
+
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
       console.log("user", user)
+      if((user.displayName==="Alfred Boateng") && ((user.email==="nkuranhy3.ab@gmail.com"))){
+          this.setState({isAmin:true})
+      }
     })
 }
-  
 
   toggle() {
     this.setState({ collapse: !this.state.collapse });
@@ -56,9 +64,12 @@ class Firebase extends Component {
 render(){
     return (
         <div className="container">
-            {this.state.isSignedIn ? (
-                
+            {this.state.isSignedIn ? (              
                 <div >
+                {this.state.isAdmin ? (<div>
+                    <Admin />
+                </div>) : (
+                    <div> 
                     <Navbar style={{marginTop:20}} color="light" light expand="md">
                         <NavbarBrand href="/">Big Daddy Supremo Bank</NavbarBrand>
                         <NavbarToggler onClick={this.toggle.bind(this)} />
@@ -83,7 +94,9 @@ render(){
                             </div>
                         </div>
                     </div>
+                </div>)}
                 </div>
+             
                 )  :  (
                     <Row>
                         <Col>

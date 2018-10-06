@@ -30,18 +30,18 @@ class BorrowersList extends Component {
             <CardHeader>
               <CardBody>
                 <ListGroup>
-              <strong className="display-4">Borrowers List </strong>
-                      {this.displayBorrowers()}
-              </ListGroup>
-              </CardBody>
-            </CardHeader>
-        </Card>
+                <strong className="display-4">Borrowers List </strong>
+                        {this.displayBorrowers()}
+                </ListGroup>
+                </CardBody>
+                </CardHeader>
+            </Card>
+            </Col>
+            <Col sm="12" xl="6" >
+                <AddBorrower />
         </Col>
-        <Col sm="12" xl="6" >
-            <AddBorrower />
-        </Col>
-        </Row>
-        <Footer />
+      </Row>
+            <Footer />
         </div>
     );
   }

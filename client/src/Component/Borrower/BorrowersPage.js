@@ -31,10 +31,6 @@ this.setState({
   primary: !this.state.primary,
 });
 }
-
-
-
-  
   render() {
     return (
         <ApolloProvider client={client}>

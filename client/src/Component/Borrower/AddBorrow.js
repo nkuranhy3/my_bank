@@ -45,6 +45,7 @@ class AddBorrower extends Component {
             ]
         })
    }
+
   render() {
      
     return (
