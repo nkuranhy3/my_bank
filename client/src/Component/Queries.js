@@ -69,4 +69,22 @@ const getAllLenders = gql`{
   }
 }`
 
-  export {addNewBorrower, addNewLender, getAllBorrowers, getAllLenders}
+const getBorrowerDetails=gql`
+ query($id:ID){
+  Borrower(id:$id){
+    id
+    name
+    colaterel
+    createdAt
+    paymentDate
+    picture
+    varificationEmail
+    lenderName{
+      id
+      name
+    }
+
+  }
+}`
+
+  export {addNewBorrower, addNewLender, getAllBorrowers, getAllLenders, getBorrowerDetails}

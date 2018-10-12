@@ -29,7 +29,7 @@ class LenderList extends Component {
               <CardHeader>
                 <CardBody>
                   <ListGroup>
-                <strong className="display-4">Borrowers List </strong>
+                <strong className="display-4">Lenders List </strong>
             {this.displayLenders()}
           </ListGroup>
               </CardBody>

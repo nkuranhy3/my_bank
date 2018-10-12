@@ -37,7 +37,7 @@ class Firebase extends Component {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
       console.log("user", user)
-      if((user.displayName==="Alfred Boateng") && ((user.email==="nkuranhy3.ab@gmail.com"))){
+      if((user.displayName==="Alfred Boateng") && (user.email==="nkuranhy3.ab@gmail.com")){
           this.setState({isAmin:true})
       }
     })
