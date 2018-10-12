@@ -21,7 +21,7 @@ class BorrowersList extends Component {
             return data.allBorrowers.map(borrowers=>{
                 return(
                 <ListGroupItem  key={borrowers.id} tag="button" action onClick={(e) =>{this.setState({selected: borrowers.id})}}>
-                {borrowers.name} has BorrowersDetails {borrowers.credit}, email is {borrowers.varificationEmail} and will pay by {borrowers.paymentDate}. He has this collateral: {borrowers.colaterel} </ListGroupItem>
+                {borrowers.name} has BorrowersDetails {borrowers.credit}</ListGroupItem>
                 )
             })
         }
@@ -35,23 +35,35 @@ class BorrowersList extends Component {
       <Row>
         <Col sm="12" xl="6">
           <Card>
-            <CardHeader>
               <CardBody>
                 <ListGroup>
                 <strong className="display-4">Borrowers List </strong>
-                        {this.displayBorrowers()}
-                        <BorrowersDetails borrowerId= {this.state.selected} />
+                    {this.displayBorrowers()}
                 </ListGroup>
-                </CardBody>
-                </CardHeader>
+             </CardBody>
             </Card>
             </Col>
             <Col sm="12" xl="6" >
-                <AddBorrower />
+            <CardHeader>
+                        TAP TO SEE DETAILS
+                </CardHeader>
+               <BorrowersDetails borrowerId= {this.state.selected} /> 
+            </Col>
+      </Row>
+      <Row>
+        <Col>
+            <Card>
+                <CardHeader>
+                        Add Borrower
+                </CardHeader>
+                <CardBody>
+                    <AddBorrower />
+                </CardBody>
+            </Card> 
         </Col>
       </Row>
-            <Footer />
-        </div>
+    <Footer />
+    </div>
     );
   }
 }

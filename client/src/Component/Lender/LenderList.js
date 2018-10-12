@@ -13,7 +13,7 @@ class LenderList extends Component {
         }else{
             return data.allLenders.map(lenders=>{
                 return(
-                    <ListGroupItem  key={lenders.id} tag="button" action>{lenders.name} Has Deposited  {lenders.deposit}, Email is {lenders.varificationEmail}</ListGroupItem>
+                    <ListGroupItem  key={lenders.id} tag="button" action>{lenders.name} Has Deposited  {lenders.deposit}</ListGroupItem>
                 )
             })
         }
